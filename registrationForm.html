@@ -1,0 +1,101 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>Registration Form</title>
+<style>  
+  
+.container {  
+    padding: 50px; 
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+}  
+
+body{
+text-align: center;
+}
+ div {  
+  padding: 10px 0;  
+ }  
+         
+
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+
+</style>  
+<script>
+    function validateForm() {  
+    var pw1 = document.getElementById("pswd1").value;  
+    var pw2 = document.getElementById("pswd2").value;  
+    if(pw1 != pw2) {  
+      document.getElementById("message2").innerHTML = "Passwords are not same";  
+      return false;  
+    }
+}
+    </script>
+</head>  
+<body>  
+    <form onsubmit ="return validateForm()">  
+  
+  <div class="container">  
+  <center>  <h1> Online Registeration Form</h1> </center>  
+<br>  
+  <label for="usn"> Username: </label>   
+<input type="text" name="username" placeholder= "Enter Username" size="15" required />   
+<label>Password :
+    <input name="password" id="pswd1"  placeholder= "Enter Password"  type="password"  minlength="8" required onkeyup='check();' />
+  </label>
+  <br>
+  <label>Confirm Password:
+    <input type="password" name="Confirm_password"  placeholder= "Confirm Password"  id="pswd2"  minlength="8" required  onkeyup='check();' /> 
+    <span id = "message2" style="color:red"> </span><br><br>
+  </label>
+<label> Name: </label>    
+<input type="text" name="name" placeholder="Enter Name" size="15"required />   
+
+<div>  
+    <label>   
+    Gender :  
+    </label><br>  
+    <input type="radio" value="Male" name="gender" checked > Male   
+    <input type="radio" value="Female" name="gender"> Female   
+     
+    </div> <br>
+    <label> Address: </label> 
+    <textarea id="add" name="address" placeholder="Write Address" style="height:150px" required></textarea>
+       
+<div>  
+<label>   
+Profession :  
+</label>   
+  
+<select>  
+<option value="BCA">Doc</option>  
+<option value="BBA">Army</option>  
+<option value="B.Tech">Police</option>  
+<option value="MBA">SWE</option>  
+<option value="MCA">Business</option>  
+<option value="M.Tech">No Job</option>  
+</select>  
+</div>  
+   <button type="submit"  value="Submit" class="registerbtn">Register</button>    
+</form>  
+</body>  
+</html>  
